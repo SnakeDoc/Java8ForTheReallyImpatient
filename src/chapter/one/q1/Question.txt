@@ -1,0 +1,3 @@
+Q: Is the comparator code in the `Arrays.sort` method called in the same thread as the call to `sort` or a different thread?
+
+A: It is all executed in the same thread. Neither a `Comparator` nor a lambda provides a new thread automatically.

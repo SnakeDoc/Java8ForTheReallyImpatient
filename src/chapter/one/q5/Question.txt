@@ -1,0 +1,9 @@
+Q: Take a file from one of your projects that contains a number of
+	`ActionListener`, `Runnable`, or the like. Replace them with lambda
+	expressions. How many lines did it save? Was the code easier to read?
+	Were you able to use method references?
+
+A: Saved eight lines in the basic example I came up with. Even though saving
+	lines is not always the best goal to reach for - clarity being more
+	important - in this case the result was an easier to read piece of code.
+	I was also able to use a method reference for printing files.
