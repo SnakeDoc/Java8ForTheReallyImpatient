@@ -1,0 +1,28 @@
+Q: Suppose you have a class that implements two interfaces `I` and `J`, each of
+	which has a method `void f()`. Exactly what happens if `f` is an
+	`abstract`, `default`, or `static` method of `J`? Repeat where a class
+	extends a superclass `S` and implements an interface `I`, each of which has
+	a method `void f()`.
+	
+A: If both methods are static methods from their respective interfaces,
+	we can simply specify which interface we want to invoke the static method
+	from, such as:
+	
+		```
+		I.f();
+		```
+		
+	If abstract, we must provide our own implementation as normal.
+	
+	If default, we have a conflict which must be resolved manually. We must
+	override the conflicting methods, and provide our own implementation. We
+	can simply call the implementation we desire, such as:
+		
+		```
+		void f() { I.super.f(); }
+		```
+	
+	If the class extends a superclass, then the superclass' implementation
+	will win, and be used by default - meaning we do not need to resolve any
+	conflict nor provide an implementation ourselves.
+	

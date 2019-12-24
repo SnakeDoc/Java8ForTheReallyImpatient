@@ -1,0 +1,7 @@
+Q: Form a subclass `Collection2` from `Collection` and add a default method
+	`void forEachIf(Consumer<T> action, Predicate<T> filter)` that applies
+	`action` to each element for which filter returns `true`. How could you
+	use it?
+	
+A: We can use this to apply some function to elements in the collection based
+	on the result of the filter as shown in the example `Nine` class.
