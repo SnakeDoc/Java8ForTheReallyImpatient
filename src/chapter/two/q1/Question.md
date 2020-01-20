@@ -1,0 +1,3 @@
+Q: Write a parallel version of the `for` loop in Section 2.1, "From Iteration to Stream Operations," on page 22. Obtain the number of processors. Make that many separate threads, each working on a segment of the list, and total up the results as they come in. (You don't want the threads to update a single counter. Why?)
+
+A: Updating the threads in a single counter would not be thread safe... although we can use the `AtomicInteger` class to safely increment the totals since it's operations are guaranteed to be atomic. Since we're only incrementing the value, there is no race condition to be careful of here. Otherwise, we would need to use a different counter per thread, and then sum the totals after the thread exits.
